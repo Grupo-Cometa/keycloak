@@ -1,0 +1,31 @@
+{
+  "name": "cometa/key-cloack",
+  "version": "1.0.2",
+  "description": "Simples conexão com keycloack, authentication/authorization",
+  "type": "library",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Geraldo Lucas Mota de Oliveira",
+      "email": "lucasmota.dev@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Cometa\\KeyCloack\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": "^8.0",
+    "firebase/php-jwt": "^6.3"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Cometa\\KeyCloack\\Providers\\KeyCloackServiceProvider"
+      ]
+    }
+  }
+}
