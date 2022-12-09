@@ -1,15 +1,15 @@
 #### Cometa KeyCloack
 
-Uma simples biblioteca para "authentication/authorization" no sso _[keycloack](https://www.keycloak.org/)_ ultilizando o protrotocolo **openid-connect**.
+Uma simples biblioteca para "authentication/authorization" no sso _[keycloack](https://www.keycloak.org/)_ utilizando o protocolo **openid-connect**.
 
-A **authorization** funciona apens para permissoes baseadas em _escopos_ ou permissoes baseadas em _recursos_, para saber mais acesse _[KeyCloack Authorization Services](https://www.keycloak.org/docs/latest/authorization_services/index.html)_
+A **authorization** funciona apenas para permissões baseadas em _escopos_ ou permissões baseadas em _recursos_, para saber mais acesse _[KeyCloack Authorization Services](https://www.keycloak.org/docs/latest/authorization_services/index.html)_
 
 #### Instalação **LARAVEL**
 
 - Instalar usando o composer: `composer require cometa/key-cloack`
-- Publicar arquivos de configuração:Execulte o senguite codigo no terminal `php artisan vendor:publish --tag=config` isso fará com com o laravel crie o arquivo de configuração em _config/ caso isso não sai como esperado será necessario fazer isso manualmente. Basta copiar \_vendor/cometa-keycloack/config/keyCloack.php_ para _config/_.
+- Publicar arquivos de configuração:Execute o seguinte código no terminal `php artisan vendor:publish --tag=config` isso fará com que o laravel crie o arquivo de configuração em _config/ caso isso não saia como esperado será necessario fazer isso manualmente. Basta copiar \_vendor/cometa-keycloack/config/keyCloack.php_ para _config/_.
 
-- Registrar Middlewares: Em _app/Http/Kenel.php_ adicioner os dois items no array **$routeMiddleware**
+- Registrar Middlewares: Em _app/Http/Kenel.php_ adicionar os dois items no array **$routeMiddleware**
 
 ```php
    $routerMiddleware = [
@@ -34,7 +34,7 @@ A **authorization** funciona apens para permissoes baseadas em _escopos_ ou perm
 - Instalar usando o composer: `composer require cometa/key-cloack`
 - Publicar configurações:
   - Copiar _vendor/cometa-keycloack/config/keyCloack.php_ para _config/_.
-  - Copiar _vendor/cometa-keycloack/config/auth.php_ para _config/_., caso o arquivo auth já exista fazer apenas um merger das informações de acordo com sua necessidade, as extrutura as chaves a baixo devem ficar da seguite forma.
+  - Copiar _vendor/cometa-keycloack/config/auth.php_ para _config/_., caso o arquivo auth já exista fazer apenas um merge das informações de acordo com sua necessidade, as extrutura e as chaves a baixo devem ficar da seguite forma.
 
 ~~~php
 // config/auth.php
@@ -46,7 +46,7 @@ A **authorization** funciona apens para permissoes baseadas em _escopos_ ou perm
 
         'guards' => [
             'api' => [
-                    'driver' => 'keycloak',
+                    'driver' => 'keyCloak',
                     'provider' => 'users',
                 ],
         ],
@@ -79,7 +79,7 @@ $app->routeMiddleware([
 
 #### Usando
 
-Se voce seguiu todas os passos corretamente basta chamar o middleware um sua rota. O middleware **permission** recebe um parametro _route#scoped_, para entender mais sobre contrele de acesso com keyclock acesse _[keycloack](https://www.keycloak.org/)_
+Se voce seguiu todas os passos corretamente basta chamar o middleware um sua rota. O middleware **permission** recebe um parametro _route#scoped_, para entender mais sobre controle de acesso com keyclock acesse _[keycloack](https://www.keycloak.org/)_
 
 ```php
 $router->get('/keycloack', [
@@ -91,7 +91,7 @@ $router->get('/keycloack', [
 
 #### Exemplos
 
-- Captura o usuario autheticado
+- Captura o usuario autenticado
 
 ```php
 
