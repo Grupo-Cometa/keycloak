@@ -13,8 +13,8 @@ A **authorization** funciona apenas para permissões baseadas em _escopos_ ou pe
 
 ```php
    $routerMiddleware = [
-       'auth' => Cometa\KeyCloack\Middlewares\Authenticate::class,
-       'permission' => Cometa\KeyCloack\Middlewares\Authorization::class
+       'auth' => GrupoCometa\Keycloak\Middlewares\Authenticate::class,
+       'permission' => GrupoCometa\Keycloak\Middlewares\Authorization::class
        ...
    ];
 
@@ -31,9 +31,9 @@ A **authorization** funciona apenas para permissões baseadas em _escopos_ ou pe
 ~~~
 #### Instalação **LUMEN**
 
-- Instalar usando o composer: `composer require cometa/key-cloack`
+- Instalar usando o composer: `composer require cometa/keycloack`
 - Publicar configurações:
-  - Copiar _vendor/cometa-keycloack/config/keyCloack.php_ para _config/_.
+  - Copiar _vendor/cometa-keycloack/config/keycloak.php_ para _config/_.
   - Copiar _vendor/cometa-keycloack/config/auth.php_ para _config/_., caso o arquivo auth já exista fazer apenas um merge das informações de acordo com sua necessidade, as extrutura e as chaves a baixo devem ficar da seguite forma.
 
 ~~~php
@@ -46,7 +46,7 @@ A **authorization** funciona apenas para permissões baseadas em _escopos_ ou pe
 
         'guards' => [
             'api' => [
-                    'driver' => 'keyCloak',
+                    'driver' => 'keycloak',
                     'provider' => 'users',
                 ],
         ],
@@ -64,22 +64,22 @@ A **authorization** funciona apenas para permissões baseadas em _escopos_ ou pe
 * Registrar Providers: Adicione a linha em *_bootstrap/app.php_*
 
 ```php
-$app->register(Cometa\KeyCloack\Providers\KeyCloackServiceProvider::class);
+$app->register(GrupoCometa\Keycloak\Providers\KeyCloakServiceProvider::class);
 ```
 
 - Registrar middlewares **authorization** e **authentication**: adicionar as linhas em _bootstrap/app.php_
 
 ```php
 $app->routeMiddleware([
-   'auth' => Cometa\KeyCloack\Middlewares\Authenticate::class,
-   'permission' => Cometa\KeyCloack\Middlewares\Authorization::class
+   'auth' => GrupoCometa\Keycloak\Middlewares\Authenticate::class,
+   'permission' => GrupoCometa\Keycloak\Middlewares\Authorization::class
 ]);
 
 ```
 
 #### Usando
 
-Se voce seguiu todas os passos corretamente basta chamar o middleware um sua rota. O middleware **permission** recebe um parametro _route#scoped_, para entender mais sobre controle de acesso com keycloak acesse _[Keycloak](https://www.keycloak.org/)_
+Se voce seguiu todas os passos corretamente basta chamar o middleware um sua rota. O middleware **permission** recebe um parametro _route#scoped_, para entender mais sobre o controle de acesso com keycloak acesse _[Keycloak](https://www.keycloak.org/)_
 
 ```php
 $router->get('/keycloak', [
