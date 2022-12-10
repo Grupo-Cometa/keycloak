@@ -1,7 +1,5 @@
 <?php
 
-namespace App\Models;
-
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Access\Authorizable as AccessAuthorizable;
