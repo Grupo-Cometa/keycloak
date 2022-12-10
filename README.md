@@ -64,7 +64,7 @@ A **authorization** funciona apenas para permissões baseadas em _escopos_ ou pe
 * Registrar Providers: Adicione a linha em *_bootstrap/app.php_*
 
 ```php
-$app->register(GrupoCometa\Keycloak\Providers\KeyCloakServiceProvider::class);
+$app->register(GrupoCometa\Keycloak\Providers\KeycloakServiceProvider::class);
 ```
 
 - Registrar middlewares **authorization** e **authentication**: adicionar as linhas em _bootstrap/app.php_
