@@ -1,12 +1,11 @@
 <?php
 
-namespace Cometa\KeyCloack;
+namespace GrupoCometa\Keycloak;
 
-use Cometa\KeyCloack\Exceptions\TokenExpiredException;
+use GrupoCometa\Keycloak\Exceptions\TokenExpiredException;
 use Firebase\JWT\ExpiredException;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
-
 use stdClass;
 
 class Token

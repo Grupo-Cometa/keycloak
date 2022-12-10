@@ -1,9 +1,9 @@
 <?php
 
-namespace Cometa\KeyCloack;
+namespace GrupoCometa\Keycloak;
 
-use Cometa\KeyCloack\Exceptions\CurlException;
-use Cometa\KeyCloack\Exceptions\KeycloackHttpException;
+use GrupoCometa\Keycloak\Exceptions\CurlException;
+use GrupoCometa\Keycloak\Exceptions\KeycloakHttpException;
 
 class Http
 {
@@ -30,6 +30,6 @@ class Http
         curl_close($curl);
         $statusCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         if ($statusCode >= 200 && $statusCode <= 299) return json_decode($response);
-        throw new KeycloackHttpException($response, $statusCode);
+        throw new KeycloakHttpException($response, $statusCode);
     }
 }

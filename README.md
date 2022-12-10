@@ -79,11 +79,11 @@ $app->routeMiddleware([
 
 #### Usando
 
-Se voce seguiu todas os passos corretamente basta chamar o middleware um sua rota. O middleware **permission** recebe um parametro _route#scoped_, para entender mais sobre controle de acesso com keyclock acesse _[keycloack](https://www.keycloak.org/)_
+Se voce seguiu todas os passos corretamente basta chamar o middleware um sua rota. O middleware **permission** recebe um parametro _route#scoped_, para entender mais sobre controle de acesso com keycloak acesse _[Keycloak](https://www.keycloak.org/)_
 
 ```php
-$router->get('/keycloack', [
-    'uses' => "KeyCloackController@index",
+$router->get('/keycloak', [
+    'uses' => "KeycloakController@index",
     'middleware' => ['auth', 'permission:users#list-all']
 ]);
 

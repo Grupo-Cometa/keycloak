@@ -1,6 +1,6 @@
 <?php
 
-namespace Cometa\KeyCloack\Exceptions;
+namespace GrupoCometa\Keycloak\Exceptions;
 
 use Exception;
 
@@ -10,5 +10,4 @@ class CurlException extends Exception {
     {
         parent::__construct($message, $code);
     }
-
 }

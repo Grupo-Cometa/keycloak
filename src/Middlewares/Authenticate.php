@@ -1,15 +1,14 @@
 <?php
 
-namespace Cometa\KeyCloack\Middlewares;
+namespace GrupoCometa\Keycloak\Middlewares;
 
-use Cometa\KeyCloack\Exceptions\KeycloackHttpException;
-use Cometa\KeyCloack\Exceptions\TokenExpiredException;
-use Cometa\KeyCloack\Exceptions\TokenNotFoundException;
-use Cometa\KeyCloack\Exceptions\UserNotFoundException;
+use GrupoCometa\Keycloak\Exceptions\KeycloakHttpException;
+use GrupoCometa\Keycloak\Exceptions\TokenExpiredException;
+use GrupoCometa\Keycloak\Exceptions\TokenNotFoundException;
+use GrupoCometa\Keycloak\Exceptions\UserNotFoundException;
 use Closure;
 use Exception;
 use Illuminate\Contracts\Auth\Factory as Auth;
-
 
 class Authenticate
 {
@@ -41,13 +40,12 @@ class Authenticate
      */
     public function handle($request, Closure $next, $guard = null)
     {
-
         try {
             if ($this->auth->guard($guard)->check()) {
                 return $next($request);
             }
             return response()->json(['error' => 'Unauthorized'], 401);
-        } catch (KeycloackHttpException $e) {
+        } catch (KeycloakHttpException $e) {
             return response()->json($e->response(), $e->statusCode());
         } catch (TokenExpiredException $e) {
             return response()->json(['error' => $e->getMessage()], 401);
@@ -55,7 +53,8 @@ class Authenticate
             return response()->json(['error' => $e->getMessage()], 422);
         } catch (UserNotFoundException $e) {
             return response()->json(['error' => $e->getMessage()],  401);
+        } catch (Exception $e) {
+            return response()->json(['error' => "Server error"], 500);
         }
     }
-
 }

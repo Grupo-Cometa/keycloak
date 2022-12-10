@@ -1,16 +1,16 @@
 <?php
 
-namespace Cometa\KeyCloack\Middlewares;
+namespace GrupoCometa\Keycloak\Middlewares;
 
-use Cometa\KeyCloack\Exceptions\KeycloackHttpException;
-use Cometa\KeyCloack\Exceptions\TokenExpiredException;
-use Cometa\KeyCloack\Exceptions\TokenNotFoundException;
+use GrupoCometa\Keycloak\Exceptions\KeycloakHttpException;
+use GrupoCometa\Keycloak\Exceptions\TokenExpiredException;
+use GrupoCometa\Keycloak\Exceptions\TokenNotFoundException;
 use Closure;
 use Exception;
 use Illuminate\Support\Facades\Auth;
+
 class Authorization
 {
-
     public function handle($request, Closure $next, $guard)
     {
         try {
@@ -20,7 +20,7 @@ class Authorization
 
             return $next($request);
 
-        } catch (KeycloackHttpException $e) {
+        } catch (KeycloakHttpException $e) {
             return response()->json($e->response(), $e->statusCode());
         } catch (TokenExpiredException $e) {
             return response()->json(['error' => $e->getMessage()], 401);

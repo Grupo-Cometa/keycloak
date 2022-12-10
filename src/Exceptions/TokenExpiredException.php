@@ -1,6 +1,6 @@
 <?php
 
-namespace Cometa\KeyCloack\Exceptions;
+namespace GrupoCometa\Keycloak\Exceptions;
 
 use Exception;
 
@@ -10,5 +10,4 @@ class TokenExpiredException extends Exception {
     {
         parent::__construct('Token expired', 403);
     }
-
 }

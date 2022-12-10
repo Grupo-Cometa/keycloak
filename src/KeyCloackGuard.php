@@ -1,16 +1,14 @@
 <?php
 
-namespace Cometa\KeyCloack;
+namespace GrupoCometa\Keycloak;
 
-
-use App\Models\User;
-use Cometa\KeyCloack\Exceptions\TokenNotFoundException;
+use GrupoCometa\Keycloak\Exceptions\TokenNotFoundException;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Http\Request;
 
-class KeyCloackGuard implements Guard
+class KeycloakGuard implements Guard
 {
     private $config;
     private $user = null;
@@ -22,7 +20,7 @@ class KeyCloackGuard implements Guard
 
     public function __construct(UserProvider $provider, Request $request)
     {
-        $this->config = config('keyCloack');
+        $this->config = config('keycloak');
         $this->provider = $provider;
         $this->request = $request;
         $this->setDecodedToken();
@@ -36,7 +34,7 @@ class KeyCloackGuard implements Guard
 
     private function initUser()
     {
-        foreach ($this->config['bind_user_key_cloack'] as $key => $value) {
+        foreach ($this->config['bind_user_keycloak'] as $key => $value) {
             $this->attributeUser[$key] = $this->decodedToken->$value;
         }
 
@@ -56,7 +54,7 @@ class KeyCloackGuard implements Guard
     private function decodedToken($token)
     {
         $this->token = new Token($token);
-        return $this->token->decode($this->config['reaml_public_key'], $this->config['signature_algorithm']);
+        return $this->token->decode($this->config['realm_public_key'], $this->config['signature_algorithm']);
     }
 
     private function getCredentials()
