@@ -154,4 +154,9 @@ class KeycloakGuard implements Guard
 
         return @$decode->authorization->permissions ?: [];
     }
+
+    public function hasUser()
+    {
+        $this->user;
+    }
 }
