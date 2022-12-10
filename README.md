@@ -33,8 +33,8 @@ A **authorization** funciona apenas para permissões baseadas em _escopos_ ou pe
 
 - Instalar usando o composer: `composer require cometa/keycloack`
 - Publicar configurações:
-  - Copiar _vendor/cometa-keycloack/config/keycloak.php_ para _config/_.
-  - Copiar _vendor/cometa-keycloack/config/auth.php_ para _config/_., caso o arquivo auth já exista fazer apenas um merge das informações de acordo com sua necessidade, as extrutura e as chaves a baixo devem ficar da seguite forma.
+  - Copiar _vendor/grupo-cometa/keycloak/config/keycloak.php_ para _config/_.
+  - Copiar _vendor/grupo-cometa/keycloak/config/auth.php_ para _config/_., caso o arquivo auth já exista fazer apenas um merge das informações de acordo com sua necessidade, as extrutura e as chaves a baixo devem ficar da seguite forma.
 
 ~~~php
 // config/auth.php
