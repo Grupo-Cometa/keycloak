@@ -1,4 +1,4 @@
-#### Cometa KeyCloak
+#### Cometa Keycloak
 
 Uma simples biblioteca para "authentication/authorization" no sso _[keycloak](https://www.keycloak.org/)_ utilizando o protocolo **openid-connect**.
 
