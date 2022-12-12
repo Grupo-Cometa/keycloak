@@ -1,8 +1,8 @@
-#### Cometa KeyCloack
+#### Cometa KeyCloak
 
-Uma simples biblioteca para "authentication/authorization" no sso _[keycloack](https://www.keycloak.org/)_ utilizando o protocolo **openid-connect**.
+Uma simples biblioteca para "authentication/authorization" no sso _[keycloak](https://www.keycloak.org/)_ utilizando o protocolo **openid-connect**.
 
-A **authorization** funciona apenas para permissões baseadas em _escopos_ ou permissões baseadas em _recursos_, para saber mais acesse _[KeyCloack Authorization Services](https://www.keycloak.org/docs/latest/authorization_services/index.html)_
+A **authorization** funciona apenas para permissões baseadas em _escopos_ ou permissões baseadas em _recursos_, para saber mais acesse _[Keycloak Authorization Services](https://www.keycloak.org/docs/latest/authorization_services/index.html)_
 
 #### Instalação **LARAVEL**
 
@@ -31,7 +31,7 @@ A **authorization** funciona apenas para permissões baseadas em _escopos_ ou pe
 ~~~
 #### Instalação **LUMEN**
 
-- Instalar usando o composer: `composer require cometa/keycloack`
+- Instalar usando o composer: `composer require grupo-cometa/keycloak`
 - Publicar configurações:
   - Copiar _vendor/grupo-cometa/keycloak/config/keycloak.php_ para _config/_.
   - Copiar _vendor/grupo-cometa/keycloak/config/auth.php_ para _config/_., caso o arquivo auth já exista fazer apenas um merge das informações de acordo com sua necessidade, as extrutura e as chaves a baixo devem ficar da seguite forma.
