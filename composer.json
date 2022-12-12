@@ -1,6 +1,5 @@
 {
   "name": "grupo-cometa/keycloak",
-  "version": "1.0.6",
   "description": "Simples conexão com keycloak, authentication/authorization",
   "type": "library",
   "license": "GPL-3.0-or-later",
