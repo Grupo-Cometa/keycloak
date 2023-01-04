@@ -66,6 +66,12 @@ A **authorization** funciona apenas para permissões baseadas em _escopos_ ou pe
     - **signature_algorithm**
 
 - Altere o Model de Usuário: 
+    - Retire o cometário dessas linhas em _bootstrap/app.php_
+    ```
+    // $app->withFacades();
+
+    // $app->withEloquent();
+    ``` 
     - Copie _vendor/grupo-cometa/keycloak/config/User.php_ para _app/Models/User.php_.
 
 - Registre o Controller de Autenticação: 
