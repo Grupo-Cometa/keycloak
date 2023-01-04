@@ -53,8 +53,6 @@ class Authenticate
             return response()->json(['error' => $e->getMessage()], 422);
         } catch (UserNotFoundException $e) {
             return response()->json(['error' => $e->getMessage()],  401);
-        } catch (Exception $e) {
-            return response()->json(['error' => "Server error"], 500);
         }
     }
 }

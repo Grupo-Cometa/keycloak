@@ -6,7 +6,7 @@ A **authorization** funciona apenas para permissões baseadas em _escopos_ ou pe
 
 #### Instalação **LARAVEL**
 
-- Instalar usando o composer: `composer require cometa/key-cloack`
+- Instalar usando o composer: `composer require grupo-cometa/keycloak`
 - Publicar arquivos de configuração:Execute o seguinte código no terminal `php artisan vendor:publish --tag=config` isso fará com que o laravel crie o arquivo de configuração em _config/ caso isso não saia como esperado será necessario fazer isso manualmente. Basta copiar \_vendor/cometa-keycloack/config/keyCloack.php_ para _config/_.
 
 - Registrar Middlewares: Em _app/Http/Kenel.php_ adicionar os dois items no array **$routeMiddleware**
