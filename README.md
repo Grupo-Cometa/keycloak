@@ -75,7 +75,7 @@ A **authorization** funciona apenas para permissões baseadas em _escopos_ ou pe
     - Copie _vendor/grupo-cometa/keycloak/config/User.php_ para _app/Models/User.php_.
 
 - Registre o Controller de Autenticação: 
-    - Copie _vendor/grupo-cometa/keycloak/config/User.php_ para _app/Models/User.php_.
+    - Copie _vendor/grupo-cometa/keycloak/config/AuthController.php_ para _app/Http/Controllers/AuthController.php_.
 
 * Registre a rota para cadastro de usuários:
 
