@@ -61,11 +61,15 @@ A **authorization** funciona apenas para permissões baseadas em _escopos_ ou pe
 
 ~~~
 
-* Registre as Variáveis de Ambiente: Adicione as variáveis **realm_public_key** e **signature_algorithm** no *.env*
+* Registre as Variáveis de Ambiente: 
+    - **realm_public_key** 
+    - **signature_algorithm**
 
-* Altere o Model de Usuário: Copie _vendor/grupo-cometa/keycloak/config/User.php_ para _app/Models/User.php_.
+- Altere o Model de Usuário: 
+    - Copie _vendor/grupo-cometa/keycloak/config/User.php_ para _app/Models/User.php_.
 
-* Registre o Controller de Autenticação: Copie _vendor/grupo-cometa/keycloak/config/User.php_ para _app/Models/User.php_.
+- Registre o Controller de Autenticação: 
+    - Copie _vendor/grupo-cometa/keycloak/config/User.php_ para _app/Models/User.php_.
 
 * Registre a rota para cadastro de usuários:
 
