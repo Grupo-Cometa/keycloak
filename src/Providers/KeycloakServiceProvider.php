@@ -13,7 +13,7 @@ class KeycloakServiceProvider extends ServiceProvider
         $local = __DIR__ . '/../../config/keycloak.php';
         $app = base_path("config/keycloak.php");
         $this->publishes([$local => $app], 'config');
-        $this->mergeConfigFrom($local, 'keycloak');
+        $this->mergeConfigFrom($app, 'keycloak');
     }
 
     public function register()

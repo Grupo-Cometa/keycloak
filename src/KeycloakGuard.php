@@ -118,6 +118,10 @@ class KeycloakGuard implements Guard
 
     public function hasRoles($roles): bool
     {
+        if(!property_exists($this->decodedToken->resource_access, $this->config['client_id'])){
+            return false;
+        }
+        
         $rolesUserAuth = $this->decodedToken->resource_access->{$this->config['client_id']}->roles;
         if (!is_array($roles)) return in_array($roles, $rolesUserAuth);
 
