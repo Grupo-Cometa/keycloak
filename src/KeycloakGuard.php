@@ -143,7 +143,7 @@ class KeycloakGuard implements Guard
     public function allPermission()
     {
         $data = [
-            'audience' => 'cometa-leitura',
+            'audience' => $this->config['client_id'],
             'grant_type' => 'urn:ietf:params:oauth:grant-type:uma-ticket'
         ];
 
