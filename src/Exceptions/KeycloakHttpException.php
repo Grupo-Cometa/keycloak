@@ -13,12 +13,12 @@ class KeycloakHttpException extends Exception {
     {
         $this->response = $response;
         $this->statusCode = $statusHttpCode;
-        parent::__construct($response,$statusHttpCode);
+        parent::__construct($response->error_description,$statusHttpCode);
     }
 
     public function response()
     {
-        return json_decode($this->response);
+        return $this->response;
     }
 
     public function statusCode()
