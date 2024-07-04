@@ -30,6 +30,8 @@ class Http
         curl_close($curl);
         $statusCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         if ($statusCode >= 200 && $statusCode <= 299) return json_decode($response);
+        $response =  json_decode($response);
+        $response->resource = $data['permission'];
         throw new KeycloakHttpException($response, $statusCode);
     }
 }
