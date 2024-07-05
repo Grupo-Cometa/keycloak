@@ -152,7 +152,7 @@ class KeycloakGuard implements Guard
             'Content-Type: application/x-www-form-urlencoded'
         ];
 
-        $data =  Http::post($this->decodedToken->iss . "/protocol/openid-connect/token", $data, $header);
+        $data =  Http::allPermission($this->decodedToken->iss , $data, $header);
 
         $decode = $this->decodedToken($data->access_token);
 
